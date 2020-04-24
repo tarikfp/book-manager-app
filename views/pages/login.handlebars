@@ -1,0 +1,48 @@
+{{> errors}}
+
+
+<div class='box'>
+  <div class='box-form'>
+    <div class='box-login-tab'></div>
+    <div class='box-login-title'>
+      <div class='i i-login'></div><h2 style="margin-top: 12px;">LOGIN</h2>
+    </div>
+    <div class='box-login'>
+      <div class='fieldset-body' id='login_form'>
+        <button onclick="openLoginInfo();" class='b b-form i i-more' title='Mais Informações'></button>
+                            <form action="/login" method="POST">
+
+        	<p class='field'>
+
+          <label for='username'>SCHOOL NUMBER</label>
+          <input type='text' id='username' name='username' title='Username' />
+          <span id='valida' class='i i-warning'></span>
+        </p>
+      	  <p class='field'>
+          <label for='password'>PASSWORD</label>
+          <input type='password' id='password' name='password' title='Password' />
+          <span id='valida' class='i i-close'></span>
+        </p>
+
+        {{!--   <label class='checkbox'>
+            <input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in
+          </label> --}}
+
+        	<input type='submit' id='do_login' value='Login' title='Login' />
+          </form>
+      </div>
+    </div>
+  </div>
+  <div class='box-info'>
+					    <p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button><h3>Need Help?</h3>
+    </p>
+					    <div class='line-wh'></div>
+    					<a href="/forgotpw"><button onclick="" class='b-support' title='Forgot Password?'> Forgot Password?</button></a>
+    <button onclick="" class='b-support' title='Contact Support'> Contact Support</button>
+    					<div class='line-wh'></div>
+    <a href="/register"><button onclick="" class='b-cta' title='Sign up now!'> CREATE ACCOUNT</button></a>
+  				</div>
+</div>
+
+
+  

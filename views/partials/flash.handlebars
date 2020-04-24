@@ -1,0 +1,29 @@
+{{#if flashSuccess}}
+
+    <div class="alert alert-info" style="text-align: center; margin: auto; width: max-content;">
+    {{flashSuccess}}
+    </div>
+{{/if}}
+
+{{#if flashError}}
+
+    <div class="alert alert-danger" style="text-align: center; margin: auto; width: max-content;">
+    {{flashError}}
+    </div>
+{{/if}}
+
+{{#if passportSuccess}}
+
+    <div class="alert alert-primary"style="text-align: center; margin: auto; width: max-content;">
+        {{passportSuccess}}
+    </div>
+
+{{/if}}
+
+{{#if passportFailure}}
+
+    <div class="alert alert-danger" style="text-align: center; margin: auto; width: max-content;">
+        {{passportFailure}}
+    </div>
+
+{{/if}}

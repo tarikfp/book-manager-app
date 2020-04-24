@@ -1,0 +1,96 @@
+{{#if bookOwner}}
+    
+
+
+<div class="container">
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a style="color: black;" href="" data-target="#profile" data-toggle="tab" class="nav-link active">{{bookOwner.firstname}} Profile</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a style="color: black;" href="" data-target="#books" data-toggle="tab" class="nav-link">{{bookOwner.firstname}} Books</a>
+                </li>
+              
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h5 style="text-align: center;" class="mt-4 mb-4">User Profile</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                             <h5 style="font-size: large; font-weight: bolder; margin-bottom: 30px;" class="text-danger" >{{bookOwner.firstname}} Informations</h5>
+        <p><span style="font-size: medium; font-weight: bold;" class="text-dark">First Name :</span> <span style="font-size: medium;" class="text-dark">{{bookOwner.firstname}}</span></p><hr>
+        <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Last Name :</span> <span style="font-size: medium;" class="text-dark">{{bookOwner.lastname}}</span></p><hr>
+        <p><span style="font-size: medium; font-weight: bold;" class="text-dark">School Number :</span> <span style="font-size: medium;" class="text-dark">{{bookOwner.username}}</span></p><hr>
+        <p><span style="font-size: medium; font-weight: bold;" class="text-dark">E- Mail :</span> <span style="font-size: medium;" class="text-dark">{{bookOwner.email}}</span></p><hr>
+        
+                            
+                           
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Recent badges</h6>
+                            <a href="#" class="badge badge-dark badge-pill">html5</a>
+                            <a href="#" class="badge badge-dark badge-pill">react</a>
+                            <a href="#" class="badge badge-dark badge-pill">codeply</a>
+                            <a href="#" class="badge badge-dark badge-pill">angularjs</a>
+                            <a href="#" class="badge badge-dark badge-pill">css3</a>
+                            <a href="#" class="badge badge-dark badge-pill">jquery</a>
+                            <a href="#" class="badge badge-dark badge-pill">bootstrap</a>
+                            <a href="#" class="badge badge-dark badge-pill">responsive-design</a>
+                            <hr>
+                            <span class="badge badge-primary"><i class="fa fa-user"></i> 900 Followers</span>
+                            <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
+                            <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span>
+                        </div>
+                   
+                    </div>
+                    <!--/row-->
+                </div>
+
+       <div class="tab-pane" id="books">
+                        
+                             <div class="col-md-12">
+                    <h5 style="text-align: center;" class="mt-4 mb-4">{{bookOwner.firstname}} Added Books</h5>
+
+                 {{#each bookOwnerBooks}}
+                    <div style="border-top: 6px outset #FFC425;border-radius: 24px;" class="book">
+                    <p style="margin-top:15px;"><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Name :</span> 
+                    <span style="font-size: medium;" class="text-dark">{{this.bookName}}</span></p><hr>
+
+                    <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Author :</span> 
+                    <span style="font-size: medium;" class="text-dark">{{this.author}}</span></p><hr>
+
+                    <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Publisher :</span> 
+                    <span style="font-size: medium;" class="text-dark">{{this.publisher}}</span></p><hr>
+                    
+                    <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Category :</span> 
+                    <span style="font-size: medium;" class="text-dark">{{this.bookCategory}}</span></p><hr>
+                 </div>
+                  {{/each}}
+                    <br>
+                    <br>
+                  
+                    
+
+                        </div>
+
+
+                 </div>
+
+
+
+            </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center">
+            <img src="{{bookOwner.avatar}}" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            
+        </div>
+    </div>
+</div>
+  {{else}}
+            <div class="alert alert-info">No User Found having that book ! sorry :(</div>
+
+{{/if}}

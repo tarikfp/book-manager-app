@@ -1,0 +1,16 @@
+{{#if bookOwner}}
+    
+<h5>First name : {{bookOwner.firstname}}</h5>
+<h5>Last name : {{bookOwner.lastname}}</h5>
+<h5>Books that user own :</h5>
+{{#each bookOwnerBooks}}
+
+ {{this.bookName}} <br>
+
+{{/each}}
+
+{{else}}
+
+<div class="alert alert-info">No User Found having that book ! sorry :(</div>
+
+{{/if}}

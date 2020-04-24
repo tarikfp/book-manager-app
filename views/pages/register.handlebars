@@ -1,0 +1,58 @@
+<div class='box'>
+  <div class='box-form'>
+    <div class='box-login-tab'></div>
+    <div class='box-login-title'>
+      <div class='i i-login'></div><h2 style="margin-top: 12px;">REGISTER</h2>
+    </div>
+    <div class='box-login'>
+      <div class='fieldset-body' id='login_form'>
+        <button onclick="openLoginInfo();" class='b b-form i i-more' title='Mais Informações'></button>
+                            <form action="/register" method="POST">
+
+        	<p class='field'>
+            <label for='username'>FIRST NAME</label>
+          <input type='text' id='firstname' name='firstname' title='firstname' value="{{firstname}}" />
+          <span id='valida' class='i i-warning'></span>
+        </p>
+        <p class='field'>
+          <label for='lastname'>LAST NAME</label>
+          <input type='text' id='lastname' name='lastname' title='lastname'value="{{lastname}}" />
+          <span id='valida' class='i i-close'></span>
+        </p>
+        <p class='field'>
+          <label for='password'>E-MAIL</label>
+          <input type='email' id='email' name='email' title='email'value="{{email}}" />
+          <span id='valida' class='i i-close'></span>
+        </p>
+        <p class='field'>
+          <label for='username'>SCHOOL NUMBER</label>
+          <input type='text' id='username' name='username' title='username'  />
+          <span id='valida' class='i i-close'></span>
+        </p>
+      	  <p class='field'>
+          <label for='password'>PASSWORD</label>
+          <input type='password' id='password' name='password' title='Password' />
+          <span id='valida' class='i i-close'></span>
+        </p>
+
+        {{!--   <label class='checkbox'>
+            <input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in
+          </label> --}}
+
+        	<input type='submit' id='do_login' value='Register' title='Login' />
+          </form>
+      </div>
+    </div>
+  </div>
+  <div class='box-info'>
+					    <p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button><h3>Need Help?</h3>
+    </p>
+					    <div class='line-wh'></div>
+    <button onclick="" class='b-support' title='Contact Support'> Contact Support</button>
+    					<div class='line-wh'></div>
+    <a href="/login"><button onclick="" class='b-cta' title='Sign up now!'> Do you have an account ?</button></a>
+  				</div>
+</div>
+
+
+  

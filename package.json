@@ -1,0 +1,38 @@
+{
+  "name": "passportLogin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd -f ./config/trk.env nodemon server.js -e js,handlebars,css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^4.0.3",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.9",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-custom": "^1.1.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.6",
+    "sharp": "^0.25.2",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0",
+    "handlebars": "^4.5.3",
+    "nodemon": "^2.0.3"
+  }
+}

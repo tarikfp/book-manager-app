@@ -1,0 +1,79 @@
+ <div class="card text-center">
+    <div class="card-header">
+        Your Profile
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Your Informations</h5>
+        <h2 style="color: red;">Your Username :</h2> {{user.username}}
+        <h2 style="color: red;">Your Student ID :</h2> {{user.username}}
+        <h2 style="color: red;">Your Books</h2>  {{books.bookName}} {{bookName}}
+        <ul class="list-group">
+
+            {{#each books}}
+            <li class="list-group-item">Book Name : {{bookName}}</li>
+            <li class="list-group-item">Book Author : {{author}}</li>
+            <li class="list-group-item">Book Publisher : {{publisher}}</li>
+            <li class="list-group-item">Book Category : {{bookCategory}}</li>
+             <a href="/deletemybook?b={{_id}}"><li class="list-group-item">Delete My Book</li></a>
+
+
+            <br>
+            <br>
+            {{else}}
+            <div class="alert alert-success">There is no any book that you</div>
+            {{/each}}
+
+        </ul>
+            <h5>My fav books</h5>
+           
+                <ul class="list-group">
+            {{#each favBooks}}
+           
+
+            <li class="list-group-item">Book Name : {{bookName}}</li>
+                <a href="/viewowner?b={{bookOwner}}">Go to owner profile  </a> <br>
+                <a href="/removefav?b={{_id}}">Remove this book from your favorites</a>  
+                <br><br>
+            
+            {{/each}}
+          
+
+          
+        </ul>
+
+
+        <p class="card-text">Please contact admin if any problem occurs.</p>
+        <a href="addbook" class="btn btn-primary">Add Book</a>
+    </div>
+    <div class="card-footer text-muted">
+        UniBook Akdeniz University
+    </div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+       {{!--      {{#each userFavBooks}}
+                {{#each this.favorites}}
+                    bookName : {{bookName}} <br>
+                      author  : {{author}}
+                      
+                {{/each}}
+            {{/each}} --}}
+
+               {{!-- <h2>{{favorites.bookName}}</h2>
+               <h2>{{favorites.author}}</h2> 
+               <h2>{{favorites.publisher}}</h2>
+               <h2>{{favorites.bookCategory}}</h2>
+               <a href="/viewowner?b={{favorites._id}}">Go to owner profile  </a>
+               {{else}}
+               <h2>no book for you</h2>
+        
+            {{/each}} --}}

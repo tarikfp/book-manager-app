@@ -1,0 +1,47 @@
+<div class="card">
+
+    <h5 class="card-header">Add Book</h5>
+    <div class="card-body">
+        <form action="/addbook" method="POST">
+
+            <div class="form-group">
+
+                <label for="bookName">Book Name</label>
+                <input type="text" name="bookName" id="bookName" class="form-control" placeholder="Book Name"
+                    value="{{username}}">
+
+            </div>
+            <div class="form-group">
+
+                <label for="author">Author</label>
+                <input type="author" name="author" id="author" class="form-control" placeholder="Author">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="publisher">Publisher</label>
+                <input type="text" name="publisher" id="publisher" class="form-control" placeholder="Publisher">
+
+            </div>
+
+           
+
+            <div class="form-group">
+                <label for="bookCategory">Book Category</label>
+
+                <select class="custom-select" id="bookCategory" name="bookCategory">
+                    <option value="">Choose a Category</option>
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Fantasy">Fantasy</option>
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary btn-block ">Add Book</button>
+        </form>
+    </div>
+
+
+</div>

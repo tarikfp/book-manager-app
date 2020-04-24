@@ -1,0 +1,403 @@
+
+
+
+ 
+
+
+
+<div class="container">
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a style="color: black;" href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a style="color: black;" href="" data-target="#books" data-toggle="tab" class="nav-link">Your Added Books</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" href="" data-target="#favbooks" data-toggle="tab" class="nav-link">Your Favorite Books</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a  style="color: black;"href="" data-target="#edit" data-toggle="tab" class="nav-link">Change Password</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" href="" data-target="#messages" data-toggle="tab" class="nav-link">Message Box</a>
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h5 style="text-align: center;" class="mt-4 mb-4">User Profile</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                             <h5 style="font-size: large; font-weight: bolder; margin-bottom: 30px;" class="text-danger" >Your Informations</h5>
+        <p><span style="font-size: medium; font-weight: bold;" class="text-dark">First Name :</span> <span style="font-size: medium;" class="text-dark">{{user.firstname}}</span><a style="float:right" href="" data-toggle="modal" data-target="#updatefirstname">
+<i style="color: chocolate;" class="fas fa-edit">
+</i></a></p><hr>
+        <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Last Name :</span> <span style="font-size: medium;" class="text-dark">{{user.lastname}}</span>
+  <a style="float:right" href="" data-toggle="modal" data-target="#updatelastname">
+<i style="color: chocolate;" class="fas fa-edit">
+</i></a>
+</p><hr>
+        <p><span style="font-size: medium; font-weight: bold;" class="text-dark">School Number :</span> <span style="font-size: medium;" class="text-dark">{{user.username}}</span></p><hr>
+        <p><span style="font-size: medium; font-weight: bold;" class="text-dark">E- Mail :</span> <span style="font-size: medium;" class="text-dark">{{user.email}}</span>  <a style="float: right;" data-toggle="modal" data-target="#updateemail">
+<i style="color: chocolate;" class="fas fa-edit">
+</i></a>
+</p><hr>
+        
+                            
+                           
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Recent badges</h6>
+                            <span class="badge badge-default">Badges Here</span>
+
+                            
+                            <hr>
+
+                            <span class="badge badge-primary"><i class="fa fa-user"></i> Akdeniz University</span>
+                            <span class="badge badge-success"><i class="fa fa-cog"></i> Engineering Department</span>
+                            <span class="badge badge-danger"><i class="fa fa-eye"></i>Computer Engineering</span>
+                        </div>
+                   
+                    </div>
+                    <!--/row-->
+                </div>
+
+                 <div class="tab-pane" id="favbooks">
+                    <h5 style="text-align: center;" class="mt-4 mb-4">Your Favorite Books</h5>
+           
+                <ul class="list-group">
+            {{#each favBooks}}
+                                <div style="border-top: 6px outset #FFC425;border-radius: 24px;" class="book">
+
+           
+             <p style="margin-top:15px;"><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Name :</span>
+              <span style="font-size: medium;" class="text-dark">{{bookName}}</span></p><hr>
+
+           <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Author :</span> 
+           <span style="font-size: medium;" class="text-dark">{{author}}</span></p><hr>
+
+            <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Publisher:</span> 
+            <span style="font-size: medium;" class="text-dark">{{publisher}}</span></p><hr>
+
+                    <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Category :</span>
+                     <span style="font-size: medium;" class="text-dark">{{bookCategory}}</span></p><hr>
+
+                
+
+                <p style="display: inline-block;"><a href="/viewowner?b={{bookOwner}}"><button type="submit" class="btn btn-success">Go to Owner profile</button></a><a href="/removefav?b={{_id}}">
+                <span style="margin-top:8px; float:right; color:red;"><i class="fas fa-trash-alt fa-2x"></i></span></a></p>
+
+
+               <br><br>
+                                </div>
+
+                                {{else}}
+
+                                <div class="alert alert-info">There is no any book that you added into your favorites</div>
+            
+            {{/each}}
+          
+
+          
+        </ul>
+
+
+        <p class="card-text">Please contact admin if any problem occurs.</p>
+                 </div>
+
+
+
+
+
+                <div class="tab-pane" id="messages">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>alert</strong>. The messages section will come soon!
+                    </div>
+                    <table class="table table-hover table-striped">
+                        <tbody>                                    
+                           {{!--  <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">Yesterday</span> There has been a request on your account since that was..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. 
+                                </td>
+                            </tr> --}}
+                        </tbody> 
+                    </table>
+                </div>
+                <div class="tab-pane" id="edit" style="text-align: center;">
+                    
+                    <p style="font-weight: bold;">Want to change password ?<br>Click below to change it</p>
+                     <a href="" data-toggle="modal" data-target="#updatepassword">
+<i class="fas fa-key fa-2x">
+</i></a>
+
+                    
+                </div>
+
+                 <div class="tab-pane" id="books">
+                        
+                             <div class="col-md-12">
+                    <h5 style="text-align: center;" class="mt-4 mb-4">Your Added Books</h5>
+
+                    {{#each books}}
+                    <div style="border-top: 6px outset #FFC425;border-radius: 24px;" class="book">
+                    <p style="margin-top:15px;"><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Name :</span> 
+                    <span style="font-size: medium;" class="text-dark">{{bookName}}</span></p><hr>
+
+                    <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Author :</span> 
+                    <span style="font-size: medium;" class="text-dark">{{author}}</span></p><hr>
+
+                    <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Publisher :</span> 
+                    <span style="font-size: medium;" class="text-dark">{{publisher}}</span></p><hr>
+                    
+                    <p><span style="font-size: medium; font-weight: bold;" class="text-dark">Book Category :</span> 
+                    <span style="font-size: medium;" class="text-dark">{{bookCategory}}</span></p><hr>
+                    <a style="float:left;" href="/deletemybook?b={{_id}}"><span style="color:red;"><i class="fas fa-trash-alt fa-2x"></i></span></a>
+                 </div>
+
+                    <br>
+                    <br>
+                    {{else}}
+                    <div class="alert alert-success">There is no any book belongs to you :(</div>
+                    {{/each}}
+               <p style="text-align: center;"><a href="addbook" class="btn btn-primary">Add New Book</a></p> 
+
+                        </div>
+
+
+                 </div>
+
+
+
+            </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center">
+          
+            <img src="{{user.avatar}}" class="mx-auto img-fluid img-circle" alt="avatar">
+            {{#ifEquals user.avatar "placeholders/usrplaceholder.jpg"}}
+
+          {{else}}
+            <a style="color:red" href="/userdeleteavatar"><i style="position: relative; bottom: 50px;"  class="fas fa-times-circle fa-2x"></i></a>
+
+          {{/ifEquals}}
+       
+            <h6 class="mt-2">Upload a different photo</h6>
+              
+              <form class="md-form" action="/uploadphoto" method="POST" enctype="multipart/form-data">
+
+  <div class="input-group">
+  <div class="custom-file">
+    <input type="file" name="image" class="custom-file-input" id="inputGroupFile01"
+      aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="inputGroupFile01">Choose Photo Here</label>
+  </div>
+
+</div>
+  <button style="position: relative; top:30px;" type="submit" class="btn peach-gradient">Upload</button>
+
+
+  </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="updatefirstname">
+<div class="modal fade" id="updatefirstname" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-warning" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h4 class="modal-title white-text w-100 font-weight-bold py-2">Update First Name</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <form action="/userupdatefirstname", method="POST">
+      
+        <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+
+            <input type="text" name="firstname" id="inputnewfirstname" class="form-control">
+            <label for="inputnewfirstname">Your Firstname</label>
+            </div>
+
+
+        
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <button type="submit" class="btn btn-outline-warning waves-effect">Update <i class="fas fa-paper-plane-o ml-1"></i></a>
+      </div>
+    </div>
+          </form>
+
+    <!--/.Content-->
+  </div>
+</div>
+</div>
+
+
+
+
+
+<div class="updatelastname">
+<div class="modal fade" id="updatelastname" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-warning" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h4 class="modal-title white-text w-100 font-weight-bold py-2">Update Lastname</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <form action="/userupdatelastname", method="POST">
+        
+
+
+        
+
+        <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+
+            <input type="text" name="lastname" id="inputlastname" class="form-control">
+            <label for="inputlastname">Your Lastname</label>
+            </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <button type="submit" class="btn btn-outline-warning waves-effect">Update <i class="fas fa-paper-plane-o ml-1"></i></a>
+      </div>
+    </div>
+          </form>
+
+    <!--/.Content-->
+  </div>
+</div>
+</div>
+
+
+<div class="updateemail">
+<div class="modal fade" id="updateemail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-warning" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h4 class="modal-title white-text w-100 font-weight-bold py-2">Update Your Email</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <form action="/userupdateemail", method="POST">
+        
+                <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+
+            <input type="email" name="newemail" id="inputnewemail" class="form-control">
+            <label for="inputnewemail">Your New Email</label>
+            </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <button type="submit" class="btn btn-outline-warning waves-effect">Update <i class="fas fa-paper-plane-o ml-1"></i></a>
+      </div>
+    </div>
+          </form>
+
+    <!--/.Content-->
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="updatepassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-warning" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h4 class="modal-title white-text w-100 font-weight-bold py-2">Update Your Password</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <form action="/userupdatepassword", method="POST">
+              <div class="md-form">
+                    <i class="fas fa-unlock prefix grey-text"></i>
+
+            <input type="password" name="oldpassword" id="inputoldpw" class="form-control">
+            <label for="inputoldpw">Your Previous Password</label>
+            </div>
+    
+        <div class="md-form">
+                    <i class="fas fa-lock prefix grey-text"></i>
+
+            <input type="password" name="newpassword" id="inputnewpw" class="form-control">
+            <label for="inputnewpw">Your New Password</label>
+            </div>
+    
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <button type="submit" class="btn btn-outline-warning waves-effect"> Update <i class="fas fa-paper-plane-o ml-1"></i></a>
+      </div>
+    </div>
+          </form>
+
+    <!--/.Content-->
+  </div>
+</div>
+

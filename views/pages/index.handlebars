@@ -1,0 +1,139 @@
+{{#if user}}
+<div>
+    <h3 class="mb-4 mt-4" style="text-align: center;">Hello {{user.firstname}} {{user.lastname}} ! <br> Welcome to Akdeniz UniBook</h3>
+</div>
+{{/if}}
+
+
+
+
+
+
+
+<div class="form-group">
+    <form action="booksearch">
+<div class="input-group md-form form-sm form-1 pl-0">
+  
+  <input style="  border: 1px solid #ffca28;" class="form-control my-0 py-1" type="search" name="term" placeholder="Search" aria-label="Search">
+  <div class="input-group-prepend">
+   <button type="submit"> <span class="input-group-text warning-color" id="basic-text1"><i class="fas fa-search text-white"
+        aria-hidden="true"></i></span></button>
+  </div>
+</div>
+</form>
+</div>
+
+   {{!--   <form action="booksearch">
+
+        <div class="input-group mb-3">
+            <input type="search" class="form-control" id="tableSearch" name="term" placeholder="Enter the book you are looking for !"
+                aria-label="Recipient's username">
+            <div class="input-group-append">
+
+                 <button class="btn btn-outline-success" type="submit" value="search">Search</button> 
+            </div>
+        </div>
+
+    </form>  --}}
+
+    
+
+
+
+<div class="card">
+
+    <h5 class="card-header">Books</h5>
+
+    <div class="card-body">
+        <ul class="list-group">
+
+
+            {{#if books}}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Book Name</th>
+                        <th scope="col">Book Author</th>
+                        <th scope="col">Book Publisher</th>
+                        <th scope="col">Book Category</th>
+                        <th scope="col">Book Owner</th>
+
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    {{#each books}}
+                    <tr>
+                        <th scope="row">{{@index}}</th>
+                        <td>{{bookName}}</td>
+                        <td>{{author}}</td>
+                        <td>{{publisher}}</td>
+                        <td>{{bookCategory}}</td>
+                        <td><a style="text-decoration: none; color: white;" href="/viewowner?b={{bookOwner._id}}"><button style="position: relative; bottom: 10px; width: 100px;" type="button" class="btn btn-warning btn-sm"> {{bookOwner.firstname}}</button></a></td>
+                        <td><a style="text-decoration: none; color : white;" href="/addfavorites?b={{_id}}"><i style="color: red; position: relative; bottom:3px;" class="fab fa-gratipay fa-2x"></i></a></td>
+
+                    </tr>
+
+
+                    {{/each}}
+
+                </tbody>
+            </table>
+            {{/if}}
+
+            {{#if noBooks}}
+
+            <div class="alert alert-warning"> {{noBooks}}</div>
+            {{/if}}
+
+
+
+
+
+
+
+            {{!--     {{#each books}}
+            <li class="list-group-item">{{bookName}}</li>  
+            {{else}}
+            <div class="alert alert-info">
+                No Book found in your criteria :(
+            </div>
+
+            {{/each}}
+ --}}
+        </ul>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+{{!-- 
+ {{#if user}}
+
+        <div class="alert alert-success">Current User {{user.username}}</div>
+        {{/if}}
+ --}}
+
+
+
+
+
+{{!-- Showing all registered users{{users}}
+        <ul class="list-group">
+            {{#each users}}
+            <li class="list-group-item">{{username}}</li>  
+            {{else}}
+            <div class="alert alert-info">
+                There is No Registered Users !
+            </div>
+
+            {{/each}}
+
+        </ul> --}}
