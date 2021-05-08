@@ -32,7 +32,7 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "env-cmd": "^10.1.0",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.7",
     "nodemon": "^2.0.3"
   }
 }
